@@ -13,6 +13,11 @@ const dummyNewsList = [
   "受験指南 第89回が投稿されました",
   "新刊『○○○○○○○○』が発売されます！",
   "web講座「古典文法をマスターする」が開催されます",
+  "受験指南 第88回が投稿されました",
+  "web講座「古典の世界」が開催されます",
+  "受験指南 第88回が投稿されました",
+  "受験指南 第87回が投稿されました",
+  "受験指南 第86回が投稿されました",
 ];
 
 const width = Dimensions.get("window").width;
@@ -22,15 +27,19 @@ export const News = () => {
     <View style={styles.container}>
       <Text style={styles.title}>新着情報</Text>
       <View style={styles.horizontalLine} />
-      <ScrollView contentContainerStyle={styles.newsItemList}>
-        {dummyNewsList.map((news, index) => {
-          return (
-            <Text numberOfLines={1} style={styles.newsItem} key={index}>
-              ・{news}
-            </Text>
-          );
-        })}
-      </ScrollView>
+      <View style={{ flex: 1 }}>
+        <ScrollView>
+          <View style={styles.newsItemList}>
+            {dummyNewsList.map((news, index) => {
+              return (
+                <Text numberOfLines={1} style={styles.newsItem} key={index}>
+                  ・{news}
+                </Text>
+              );
+            })}
+          </View>
+        </ScrollView>
+      </View>
     </View>
   );
 };
